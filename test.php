@@ -10,6 +10,17 @@ class AwsTest
     function __construct($config)
     {
         $this->config = $config;
+
+        $file = "{$_SERVER['HOME']}/.aws/credentials";
+        if(!file_exists($file)) {
+            fprintf(STDERR,
+                "Make sure to create a default profile in the file $file as described here: \n" .
+                "http://docs.aws.amazon.com/aws-sdk-php/v2/guide/credentials.html#credential-profiles \n" .
+                "or to use Windows and set it up as described here:\n" .
+                "http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html\n"
+            );
+            exit;
+        }
     }
 
     /**
