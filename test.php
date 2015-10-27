@@ -19,7 +19,6 @@ class AwsTest
                 "or to use Windows and set it up as described here:\n" .
                 "http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html\n"
             );
-            exit;
         }
     }
 
